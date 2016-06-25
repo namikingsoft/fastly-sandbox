@@ -2,15 +2,11 @@ version: '2'
 services:
   app:
     build: app
-    ports:
-      - 1080:80
     environment:
       - VIRTUAL_HOST=fastly-app.namiking.net
   static:
     build: static
-    ports:
-      - 2080:80
     volumes:
-      - ./static/public:/app/public
+      - ./static/public:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=fastly-static.namiking.net
