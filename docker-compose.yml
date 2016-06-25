@@ -7,7 +7,7 @@ services:
   static:
     build: static
     volumes:
-      - ./static/public:/usr/share/nginx/html
+      - ./static/html:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=fastly-static.namiking.net
   proxy:
