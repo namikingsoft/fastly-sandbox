@@ -10,3 +10,12 @@ services:
       - ./static/public:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=fastly-static.namiking.net
+  proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - '80:80'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    depends_on:
+      - app
+      - static
