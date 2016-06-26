@@ -1,9 +1,9 @@
 version: '2'
 services:
-  app:
-    build: app
+  web:
+    build: web
     environment:
-      - VIRTUAL_HOST=fastly-app.namiking.net
+      - VIRTUAL_HOST=fastly-web.namiking.net
   static:
     build: static
     volumes:
@@ -17,5 +17,5 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
-      - app
+      - web
       - static
