@@ -1,0 +1,13 @@
+general:
+  branches:
+    only:
+      - master
+
+machine:
+  timezone: Asia/Tokyo
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - ssh -p $DEPLOY_SSH_PORT deploy-fastly-sandbox@deploy.namiking.net
