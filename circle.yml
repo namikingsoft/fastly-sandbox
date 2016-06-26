@@ -6,6 +6,10 @@ general:
 machine:
   timezone: Asia/Tokyo
 
+test:
+  override:
+    - echo 'No test yet'
+
 deployment:
   master:
     branch: master
