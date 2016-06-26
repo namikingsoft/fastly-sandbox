@@ -9,4 +9,5 @@ deployment:
   master:
     branch: master
     commands:
-      - ssh -p $DEPLOY_SSH_PORT deploy-fastly-sandbox@deploy.namiking.net
+      - bin/deploy.sh
+      - bin/purge.sh

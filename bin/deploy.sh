@@ -1,6 +1,3 @@
 #!/bin/bash
 
-cd $(dirname $0)
-git pull
-docker-compose build
-docker-compose up -d
+ssh -p $DEPLOY_SSH_PORT deploy-fastly-sandbox@deploy.namiking.net
