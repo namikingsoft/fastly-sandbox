@@ -13,6 +13,7 @@ RESPONSE_JSON=$(
     https://api.fastly.com/service/${FASTLY_SERVICE_ID}/purge_all
 )
 
+# {"status":"ok"} in case of success
 echo $RESPONSE_JSON
 
 RESULT=$(echo $RESPONSE_JSON | jq -r .status)
